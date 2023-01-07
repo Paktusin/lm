@@ -5,8 +5,8 @@ import { routes } from "./components/routes";
 
 function App() {
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout>
         <Routes>
           {routes
             .filter((route) => route.path)
@@ -18,8 +18,8 @@ function App() {
               />
             ))}
         </Routes>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
