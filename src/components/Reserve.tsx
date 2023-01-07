@@ -13,25 +13,24 @@ interface IReserveProps {}
 
 export const Reserve: React.FC<IReserveProps> = (props) => {
   const formRef = React.useRef<HTMLFormElement>(null);
-  const { errors, handleChange, values, handleSubmit } =
-    useFormik<any>({
-      initialValues: {},
-      validationSchema: Yup.object({
-        date: Yup.date()
-          .required("Date is required")
-          .min(new Date(), "Date cannot be in the past"),
-        time: Yup.string().required("Time is rquired"),
-        guests: Yup.number()
-          .required("Number of guests is required")
-          .min(1, "Minimum 1 guest required")
-          .max(10, "Guests should not exceed 10"),
-        occasion: Yup.string().required("Occasion is rquired"),
-      }),
-      onSubmit: (values) => {
-        alert("successfully reserved");
-        formRef.current?.reset();
-      },
-    });
+  const { errors, handleChange, values, handleSubmit } = useFormik<any>({
+    initialValues: {},
+    validationSchema: Yup.object({
+      date: Yup.date()
+        .required("Date is required")
+        .min(new Date(), "Date cannot be in the past"),
+      time: Yup.string().required("Time is rquired"),
+      guests: Yup.number()
+        .required("Number of guests is required")
+        .min(1, "Minimum 1 guest required")
+        .max(10, "Guests should not exceed 10"),
+      occasion: Yup.string().required("Occasion is rquired"),
+    }),
+    onSubmit: (values) => {
+      alert("successfully reserved");
+      formRef.current?.reset();
+    },
+  });
 
   const controls: {
     name: string;
@@ -57,7 +56,7 @@ export const Reserve: React.FC<IReserveProps> = (props) => {
 
   return (
     <section className="reserve container">
-      <form ref={formRef} onSubmit={handleSubmit}>
+      <form data-testid="reserve-form" ref={formRef} onSubmit={handleSubmit}>
         {controls.map((control, index) => (
           <div className="control" key={index}>
             <label>{control.name}</label>
@@ -68,11 +67,13 @@ export const Reserve: React.FC<IReserveProps> = (props) => {
                 onChange={handleChange}
               />
             )}
-            <span className="error">{(errors as any)[control.name]}</span>
+            <span className="error" role="error">
+              {(errors as any)[control.name]}
+            </span>
           </div>
         ))}
 
-        <button className="btn" type={"submit"}>
+        <button role="submit" className="btn" type={"submit"}>
           Reserve
         </button>
       </form>
