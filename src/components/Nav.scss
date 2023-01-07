@@ -2,16 +2,24 @@
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 78px;
   gap: 8px;
   position: relative;
 
+  img {
+    margin-right: 32px;
+  }
+
   .menu {
+    flex: 1 auto;
+    display: flex;
     margin-left: auto;
 
     @media (max-width: $breakMd) {
+      flex: unset;
+      display: unset;
+
       &::before {
         content: "menu";
         cursor: pointer;
@@ -24,8 +32,10 @@ nav {
   }
 
   .links {
+    flex: 1 auto;
     display: flex;
     gap: 8px;
+    justify-content: space-between;
 
     a {
       text-decoration: none;

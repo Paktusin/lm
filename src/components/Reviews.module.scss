@@ -1,6 +1,6 @@
 @import "src/scss/_variables";
 
-.title{
+.title {
   width: 100%;
   text-align: center;
   margin-bottom: 24px;
@@ -9,6 +9,19 @@
 }
 
 .reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+
+  @media (max-width: $breakMd) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: $breakSm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   img {
     border-radius: 50%;
     object-fit: cover;
@@ -16,9 +29,6 @@
     width: 50px;
     box-shadow: #33333387 0 0 5px;
   }
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .stars {
@@ -32,11 +42,15 @@
 }
 
 .bio {
-  margin-bottom: 16px;
+  margin: 16px 0;
   display: flex;
   gap: 8px;
   > div {
     font-weight: bold;
     flex: 1 auto;
   }
+}
+
+.control{
+  
 }

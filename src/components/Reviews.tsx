@@ -33,7 +33,10 @@ const Rating: React.FC<{ rating: number }> = ({ rating }) => {
       {Array(10)
         .fill(null)
         .map((_, index) => (
-          <span className={clsx({ [styles.yellow]: index + 1 < rating })}>
+          <span
+            key={index}
+            className={clsx({ [styles.yellow]: index + 1 < rating })}
+          >
             ★
           </span>
         ))}

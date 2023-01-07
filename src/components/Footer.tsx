@@ -13,8 +13,10 @@ export const Footer: React.FC<IFooterProps> = (props) => {
         <img src={logo} alt="logo" />
         <div className={styles.block}>
           <label>Doormat navigation</label>
-          {routes.map((route) => (
-            <NavLink to={route.path!}>{route.name}</NavLink>
+          {routes.map((route, index) => (
+            <NavLink key={index} to={route.path!}>
+              {route.name}
+            </NavLink>
           ))}
         </div>
         <div className={styles.block}>
