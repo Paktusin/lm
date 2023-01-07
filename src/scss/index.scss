@@ -1,0 +1,22 @@
+@import "./variables";
+
+html {
+  font-family: Karla;
+  font-size: 16px;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 887px;
+  margin: 0 auto;
+  padding: 0 $containerPadding;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Markazi Text;
+}
+

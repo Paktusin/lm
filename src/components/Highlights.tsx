@@ -1,7 +1,18 @@
 import * as React from "react";
+import { ButtonLink } from "./ButtonLink";
+import { Menu } from "./Menu";
+import "./HighLights.scss";
+import { ROUTES } from "./routes";
 
-interface IMenusProps {}
+interface IHighLightsProps {}
 
-export const Menu: React.FC<IMenusProps> = (props) => {
-  return <>Menu</>;
+export const HighLights: React.FC<IHighLightsProps> = (props) => {
+  return (
+    <section className="highlights container">
+      <div className="header">
+        <h2>This week specials!</h2> <ButtonLink to={ROUTES.menu}>Online Menu</ButtonLink>
+      </div>
+      <Menu />
+    </section>
+  );
 };

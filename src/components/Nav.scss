@@ -1,0 +1,60 @@
+@import "src/scss/variables";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+  gap: 8px;
+  position: relative;
+
+  .menu {
+    margin-left: auto;
+
+    @media (max-width: $breakMd) {
+      &::before {
+        content: "menu";
+        cursor: pointer;
+      }
+
+      &.open .links {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 8px;
+
+    @media (max-width: $breakMd) {
+      transform: scaleY(0);
+      transform-origin: top;
+      position: absolute;
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      top: 100%;
+      right: 0;
+      background-color: $gray;
+      padding: 8px;
+      border-bottom-left-radius: $radius;
+      border-bottom-right-radius: $radius;
+      z-index: 1;
+
+      a {
+        padding: 8px;
+        user-select: none;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: $black;
+    &.active {
+      color: $green;
+    }
+  }
+}

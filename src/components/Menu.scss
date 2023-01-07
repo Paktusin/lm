@@ -1,0 +1,53 @@
+@import "src/scss/variables";
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+
+  @media (max-width: $breakMd) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $breakSm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dish {
+  background-color: $gray;
+  border-radius: $radius;
+  overflow: hidden;
+
+  .title {
+    align-items: baseline;
+    display: flex;
+    font-size: 1.4rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px ;
+  }
+
+  .price {
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    color: $pink;
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .order {
+    text-decoration: none;
+    color: $black;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,16 @@
+@import "src/scss/variables";
+
+.btn {
+  color: #333;
+  text-decoration: none;
+  background-color: $yellow;
+  font-weight: bold;
+  border-radius: $radius;
+  padding: 8px 16px;
+  display: inline-block;
+  box-shadow: #33333387 0 2px 2px 0px;
+
+  &:active {
+    box-shadow: inset #33333387 0 2px 2px 0px;
+  }
+}
