@@ -1,0 +1,47 @@
+@import "../scss/variables";
+
+.footer {
+  background-color: $green;
+  padding: 24px 0;
+  color: #fff;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+
+    &:global(.active) {
+      color: $wheat;
+    }
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 8px;
+
+    @media (max-width: $breakMd) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  img {
+    height: 70px;
+    width: 45px;
+    object-fit: cover;
+    object-position: left;
+
+    @media (max-width: $breakMd) {
+      display: none;
+    }
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 8px;
+    color: $yellow;
+  }
+}

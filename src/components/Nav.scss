@@ -27,6 +27,15 @@ nav {
     display: flex;
     gap: 8px;
 
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: $black;
+      &.active {
+        color: $green;
+      }
+    }
+
     @media (max-width: $breakMd) {
       transform: scaleY(0);
       transform-origin: top;
@@ -46,15 +55,6 @@ nav {
         padding: 8px;
         user-select: none;
       }
-    }
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: $black;
-    &.active {
-      color: $green;
     }
   }
 }
