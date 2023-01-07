@@ -2,8 +2,8 @@ import * as React from "react";
 import { Hero } from "./Hero";
 import { HighLights } from "./HighLights";
 import { Reviews } from "./Reviews";
-import { About } from "./Reviews copy";
 import "./Home.scss";
+import { About } from "./About";
 
 interface IHomeProps {}
 

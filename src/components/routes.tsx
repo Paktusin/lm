@@ -1,8 +1,8 @@
 import { RouteProps } from "react-router-dom";
+import { About } from "./About";
 import { Home } from "./Home";
 import { Menu } from "./Menu";
 import { Order } from "./Order";
-import { About } from "./Reviews copy";
 
 export enum ROUTES {
   home = "/",
